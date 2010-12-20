@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+{% endblock %}
+
+
+{% block content %}
+    <p>
+      Hi.
+     </p><p>
+       This website lets you upload a shapefile to <a href="http://google.com/fusiontables">Google Fusion Tables</a>.
+     </p><p>
+      For this to work, you will need to authorize this site to access your Fusion Tables data on your behalf.
+    </p>
+   <input type="button" onclick="location.href='/upload'" value="Continue"> 
+
+{% endblock %}
+
+

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+    {% if upload.ft_table_id %}
+    {% else %}
+      <script type="text/javascript">
+        setTimeout("location.reload(1)",10000);
+      </script>
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+  {% for upload in uploads %}
+    <h2>
+      {{upload.get_title}}
+    </h2>
+    <div class="detail">
+      <span class="key">Status</span>
+      <span class="val">{{upload.get_status}}</span>
+    </div>
+    {% ifequal upload.status 6 %}
+    <div class="detail">
+      <span class="key">Note</span>
+      <span class="val">Oops: {{upload.status_mg}}<br>.  Don't worry, we've been notified of this error and will take a peek to see what went wrong sometime soon.  Leave a <a href="/contact">comment</a> if you have any questions.</span>
+    </div>
+    {% endifequal %}
+    {% if upload.total_rows %}
+    <div class="detail">
+      <span class="key">Total Rows</span>
+      <span class="val">{{upload.total_rows}}</span>
+    </div>
+    {% endif %}
+    <div class="detail">
+      <span class="key">Rows Processed</span>
+      <span class="val">{{upload.rows_processed}}</span>
+    </div>
+    {% if upload.rows_imported %}
+    <div class="detail">
+      <span class="key">Rows Inserted</span>
+      <span class="val">{{upload.rows_imported}}</span>
+    </div>
+    {% endif %}
+    {% if upload.ft_table_id %}
+    <div class="detail">
+      <span class="key">Fusion Table</span>
+      <span class="val">
+        <a href="http://www.google.com/fusiontables/DataSource?dsrcid={{upload.ft_table_id}}">{{upload.ft_table_id}}</a>
+      </span>
+    </div>
+    {% else %}
+     <div class="detail">
+       .. page will refresh shortly ..
+     </div>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+
+

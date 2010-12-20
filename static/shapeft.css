@@ -1,0 +1,47 @@
+body{
+ margin: 0 auto;
+ text-align:center;
+ max-width: 750px; height: 100%;
+ width:expression(document.body.clientWidth > 750? "900px" : "auto");
+ line-height: 1.2:w
+;
+ font-size:1.0em;
+ font-family: arial, verdana, lucida, sans-serif;
+ color:#2F2F2F;
+ }
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+color: #18324d ! important;
+}
+ 
+#container{
+text-align:left;
+width:expression(document.body.clientWidth > 750? "900px" : "auto");
+} 
+ 
+a {color: #6e6955;}
+
+img {border: none;}
+
+p {margin: 0 0 0.75em 0; line-height: 1.3em;}
+
+
+
+
+#header{
+height:50px;
+border-bottom:1px solid orange;
+}
+
+
+#footer{
+margin-top:25px;
+border-top:1px solid orange;
+color:grey;
+font-size:.9em;
+}

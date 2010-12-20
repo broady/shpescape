@@ -1,0 +1,5 @@
+Django==1.2.1
+simplejson==2.1.1
+-e hg+http://bitbucket.org/jlivni/django-shapes#egg=shapes
+-e svn+http://fusion-tables-client-python.googlecode.com/svn/trunk#egg=ftlibrary
+oauth2

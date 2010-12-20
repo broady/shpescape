@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="google-site-verification" content="PrLdpsOqWpL-Sruk-bu_HlrldDUN1QHXv9uVbgU0VZk" />
+    <title>Shape to FT</title>
+    <link href="/static/shapeft.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+
+    {% block extrahead %} {% endblock %}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19811807-1']);
+  _gaq.push(['_setDomainName', '.shpescape.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body {% block extra_body_load %} {% endblock %}>
+<div id="container">
+
+  <div id="header">
+  <h3> Shape to Fusion</h3>
+  </div>
+    {% block sidebar_container %}
+     <div id="sidebar">
+    {% block sidebar %}
+    {% endblock %}
+     </div>
+    {% endblock %}
+    
+    
+    <div id="content">
+    {% block content %}{% endblock %}
+    </div>
+    
+    
+    <div id="footer">
+    {% block footer %}
+      {{request.session.ft_token}} 
+    {% endblock %}
+    </div>
+</div>
+</body>
+</html>

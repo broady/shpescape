@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block body_load %}class="contact"{% endblock %}
+
+    {% block content %}
+    
+    <p>
+    Let us know what you think.
+   <p></p>
+    </p>
+    <form action="/contact/" method="POST">
+      <fieldset>
+        <legend> Message details</legend>
+
+        <div class="fieldWrapper">
+            {{ form.name.errors }}
+            <label for="id_subject">Your Name:</label><br>
+            {{ form.name }}
+        </div>
+        
+        <div class="fieldWrapper">
+            {{ form.sender.errors }}
+            <label for="id_sender">Your email address:</label><br>
+            {{ form.sender }}
+        </div>
+        
+        <div class="fieldWrapper">
+            {{ form.subject.errors }}
+            <label for="id_subject">Message Subject:</label><br>
+            {{ form.subject }}
+        </div>
+        
+        <div class="fieldWrapper">
+            {{ form.message.errors }}
+            <label for="id_message">Message:</label><br>
+            {{ form.message }}
+        </div>
+        
+        <div class="fieldWrapper">
+            {{ form.cc_myself.errors }}
+            <label for="id_cc_myself">CC yourself?</label>
+            {{ form.cc_myself }}
+        </div>
+        <br><br>
+        <p><input type="submit" value="Send message" /></p>
+        
+        </fieldset>
+    </form>
+</div>
+
+<!-- Google Code for contact page view Conversion Page -->
+<script type="text/javascript">
+<!--
+var google_conversion_id = 1068571143;
+var google_conversion_language = "en_US";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "BYLaCKe7rgEQh7TE_QM";
+var google_conversion_value = 0;
+if (0.05) {
+  google_conversion_value = 0.05;
+}
+//-->
+</script>
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1068571143/?value=0.05&amp;label=BYLaCKe7rgEQh7TE_QM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+    {% endblock %}
+    
+    {% block extra_right_sidebar %}
+                        <div class="sidebar_content">
+                        <div id="contact_info">
+                            <div class="sidebar_header">
+                            Contact
+                            </div>
+                            
+                           Umbrella Consulting, LLC<br>
+                           Seattle &amp; San Francisco<br>
+                           <b>(415) 938-7893</b>
+<div id="callme" style="margin-left:-50px;margin-top:15px;z-index:-3;display:none;">
+<object type="application/x-shockwave-flash" data="https://clients4.google.com/voice/embed/webCallButton" width="230" height="85"><param name="movie" value="https://clients4.google.com/voice/embed/webCallButton" /><param name="wmode" value="transparent" /><param name="FlashVars" value="id=284ed26257b3442b1236eb91660499a3bb24abfb&style=0" /></object>
+</div>
+
+                        </div>
+                    </div>
+                        <br><br>
+    {% endblock %}

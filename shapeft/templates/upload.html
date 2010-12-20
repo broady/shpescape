@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+    <h4>Upload a zip archive of one or more shapefiles, and we'll import into Google Fusion Tables for you</h4>
+    {% if form.errors %}
+    <p class="errorlist">{% trans "Sorry there are corrections needed in your form below:" %} {{ form.non_field_errors }}</p>
+    {% endif %}
+    {% if form.is_multipart %}
+    <form enctype="multipart/form-data" method="post" action=".">
+    {% else %}
+    <form method="post" action=".">
+   {% endif %}
+   {{ form.as_p }}
+   <p>
+     <input type="checkbox" name="create_simplify" id="simplify" checked/>
+     Create a <i>Simplified Geometry</i> column
+   </p>
+   <p>
+     <input type="checkbox" name="create_centroid" id="centroid" checked/>
+     Create a <i>Centroid Geometry</i> column
+   </p>
+   <p>
+     <input type="checkbox" name="create_centroid_poly" id="centroid" />
+     Create a <i>Buffered Centroid Geometry</i> column
+   </p>
+
+   <input type="submit" value="Upload " />
+   </form>
+
+<br><br>
+    Notes:
+    <ul>
+      <li>Your zipfile archive must include a <i>prj, shp, shx,</i> and
+        <i>dbf</i> file for each shapefile
+      </li>
+      <li>You are limited to 200MB in total storage on Google Fusion Tables</li>
+      <li>This application will upload a maximum of 200k rows</li>
+      <li>If you have trouble, leave a <a href="/contact">comment</a></li>
+    </ul>
+
+
+{% endblock %}
